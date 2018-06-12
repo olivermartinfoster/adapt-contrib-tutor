@@ -15,26 +15,26 @@ define([
     if (view.model.has('_isCorrect')) {
       // Attach specific classes so that feedback can be styled.
       if (view.model.get('_isCorrect')) {
-        classes.push('notify--correct');
+        classes.push('tutor--correct');
       } else {
         if (view.model.has('_isAtLeastOneCorrectSelection')) {
           // Partially correct feedback is an option.
           if (view.model.get('_isAtLeastOneCorrectSelection')) {
-            classes.push('notify--partially-correct');
+            classes.push('tutor--partially-correct');
           } else {
-            classes.push('notify--incorrect');
+            classes.push('tutor--incorrect');
           }
         } else {
-          classes.push('notify--incorrect');
+          classes.push('tutor--incorrect');
         }
       }
     }
 
     // Add the extension/component type which triggered this.
     if (view.model.has('_component')) {
-      classes.push('notify--component-' + view.model.get('_component'));
+      classes.push('tutor--component-' + view.model.get('_component'));
     } else if (view.model.has('_extension')) {
-      classes.push('notify--extension-' + view.model.get('_extension'));
+      classes.push('tutor--extension-' + view.model.get('_extension'));
     }
 
     // Add the _id property as attribute.
