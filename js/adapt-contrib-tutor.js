@@ -4,9 +4,14 @@ define([
 
   Adapt.on('questionView:showFeedback', function(view) {
 
+    var feedbackImageObject = view.model.get("feedbackImage");
+
     var alertObject = {
       title: view.model.get("feedbackTitle"),
-      body: view.model.get("feedbackMessage")
+      body: view.model.get("feedbackMessage"),
+      _image: feedbackImageObject && feedbackImageObject._src,
+      imageAlt: feedbackImageObject && feedbackImageObject.alt,
+      feedbackClasses: view.model.get("feedbackClasses")
     };
 
     var attributes = {};
